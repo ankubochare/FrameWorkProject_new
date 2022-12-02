@@ -7,26 +7,32 @@ import org.openqa.selenium.support.PageFactory;
 
 public class OrganizationPage {
 
-	@FindBy(xpath = "\"//a[@class=\\\"hdrLink\\\"]\"")
-	private WebElement PageHeadrText;
+	@FindBy(xpath = "//a[@class='hdrLink']")
+	private WebElement PageHeadr;
 	@FindBy(xpath = "//img[@title='Create Organization...']")
 	private WebElement PluseImage;
-	@FindBy(xpath = "//table[@class=\\\"lvt small\\\"]/tbody/tr[last()]/td[3]")
+	@FindBy(xpath = "//span[@class=\"lvtHeaderText\"]")
 	private WebElement neworganization;
+	@FindBy(xpath = "//table[@class='lvt small']/descendant::tr[last()]/td[3]/a")
+	private WebElement newOrganizationinfo;
 
 	public OrganizationPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
-	public String getpageHeaderText() {
-		return PageHeadrText.getText();
+	public String getpageHeader() {
+		return PageHeadr.getText();
 	}
 
-	public String clickPlusImage() {
-		return PluseImage.getText();
+	public void clickPlusImage() {
+		PluseImage.click();
 	}
 
 	public String getNewOrganization() {
 		return neworganization.getText();
+	}
+
+	public String getNewOrganizationinfo() {
+		return newOrganizationinfo.getText();
 	}
 }

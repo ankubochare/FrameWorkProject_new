@@ -18,7 +18,7 @@ public class homePage {
 	private WebElement LeadsTab;
 	@FindBy(xpath = "//a[contains(text(),'Contacts')]")
 	private WebElement ContactTabs;
-	@FindBy(xpath = "//img[@src=\\\"themes/softed/images/user.PNG\\\"]")
+	@FindBy(xpath = "//img[@src='themes/softed/images/user.PNG']")
 	private WebElement administratorImage;
 	@FindBy(xpath = "//a[.='Sign Out']")
 	private WebElement signout;

@@ -84,7 +84,7 @@ public class CreateNewOrganization {
 		driver.findElement(By.name("accountname")).sendKeys(accountname);
 
 		WebElement industryDropdown = driver.findElement(By.name("industry"));
-		webdriver.dropdown(industryDropdown, map.get("Industry"));
+		webdriver.dropDown(industryDropdown, map.get("Industry"));
 		// Select industry = new Select(industryDropdown);
 		// industry.selectByVisibleText("Engineering");
 

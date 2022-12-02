@@ -17,10 +17,10 @@ public class CreateNewOrganizationPage {
 	@FindBy(name = "industry")
 	private WebElement industryDropdown;
 
-	@FindBy(xpath = "//input[@value=\\\"T\\\"]")
+	@FindBy(xpath = "//input[@value=\"T\"]")
 	private WebElement groupradiobutton;
 
-	@FindBy(xpath = "//input[@accesskey=\\\"S\\\"]")
+	@FindBy(xpath = "//input[@accesskey=\"S\"]")
 	private WebElement savebutton;
 
 	public CreateNewOrganizationPage(WebDriver driver) {
@@ -33,11 +33,11 @@ public class CreateNewOrganizationPage {
 
 	public void clickGroupradiobutton() {
 		groupradiobutton.click();
-		;
+
 	}
 
 	public void selectIndustryDropdown(WebDriverUtility webdriver, String industry) {
-		webdriver.dropdown(industryDropdown, industry);
+		webdriver.dropDown(industryDropdown, industry);
 	}
 
 	public WebElement getPageHeaderText() {

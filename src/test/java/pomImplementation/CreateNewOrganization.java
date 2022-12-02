@@ -74,7 +74,7 @@ public class CreateNewOrganization {
 		home.ClickOrganizationTab();
 		// String OrganizationHeaderLink =
 		// driver.findElement(By.xpath("//a[@class=\"hdrLink\"]")).getText();
-		if (organizationpage.getpageHeaderText().contains("Organization")) {
+		if (organizationpage.getpageHeader().contains("Organization")) {
 			System.out.println("pass: Organization page is diaplsyed");
 		} else {
 			System.out.println("Fail: Organization page not found");
@@ -96,7 +96,7 @@ public class CreateNewOrganization {
 		String accountname = map.get("Organization Name") + javautility.generateRandomNumber(100);
 		// driver.findElement(By.name("accountname")).sendKeys(accountname);
 		createneworg.setOrganizationName(accountname);
-		createneworg.selectIndustryDropdown(webdriver, accountname);
+		createneworg.selectIndustryDropdown(webdriver, map.get("Industry"));
 		createneworg.clickGroupradiobutton();
 //		WebElement industryDropdown = driver.findElement(By.name("industry"));
 //		webdriver.dropdown(industryDropdown, map.get("Industry"));
@@ -120,13 +120,13 @@ public class CreateNewOrganization {
 
 		// WebElement newOrganizatio = driver.findElement(By.xpath("//table[@class=\"lvt
 		// small\"]/tbody/tr[last()]/td[3]"));
-		if (organizationpage.getNewOrganization().contains(accountname)) {
+		if (organizationpage.getNewOrganizationinfo().contains(accountname)) {
 			System.out.println("Test case pass");
-			excel.writeDataIntoExcel("Create Organization", "pass", AutoConstantpath.EXCEL_FILE_PATH, "TestData");
+			excel.writeDataIntoExcel("TestData", "pass", AutoConstantpath.EXCEL_FILE_PATH, "Create Organization");
 
 		} else {
 			System.out.println("Test case Fail");
-			excel.writeDataIntoExcel("Create Organization", "Fail", AutoConstantpath.EXCEL_FILE_PATH, "TestData");
+			excel.writeDataIntoExcel("TestData", "Fail", AutoConstantpath.EXCEL_FILE_PATH, "Create Organization");
 		}
 		home.signOutTheApplication(webdriver);
 
